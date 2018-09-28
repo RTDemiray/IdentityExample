@@ -1,0 +1,63 @@
+﻿@model IdentityForExample.Models.Login
+
+@{
+
+    ViewBag.Title = "Login";
+
+}
+
+
+
+<h2>Üye Giriş</h2>
+
+
+
+@Html.ValidationSummary()
+
+
+
+@using (Html.BeginForm())
+
+{
+
+    @Html.AntiForgeryToken()
+
+    <table>
+
+        <tbody>
+            <tr>
+
+                <td style="width: 140px;"> @Html.LabelFor(m => m.UserName) </td>
+                16.
+                <td> @Html.TextBoxFor(m => m.UserName) </td>
+
+            </tr>
+
+            <tr>
+
+                <td> @Html.LabelFor(m => m.Password) </td>
+
+                <td> @Html.PasswordFor(m => m.Password) </td>
+
+            </tr>
+
+            <tr>
+
+                <td> @Html.LabelFor(m => m.RememberMe) </td>
+
+                <td> @Html.CheckBoxFor(m => m.RememberMe) </td>
+
+            </tr>
+
+            <tr>
+
+                <td></td>
+
+                <td><input type="submit" value="Giriş" class="btn btn-default"></td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+}
